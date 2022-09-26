@@ -1,0 +1,25 @@
+* {
+  margin: 0px;
+  padding: 0px;
+}
+
+body {
+  background-color: skyblue;
+}
+
+.card {
+  padding-right: 10px;
+  padding-left: 10px;
+}
+
+#save {
+  margin: 20px;
+}
+
+#day-weather {
+  text-align: center;
+}
+
+footer {
+  text-align: center;
+}
