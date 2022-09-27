@@ -1,7 +1,3 @@
-* {
-  margin: 0px;
-  padding: 0px;
-}
 
 body {
   background-color: skyblue;
@@ -22,4 +18,9 @@ body {
 
 footer {
   text-align: center;
+}
+
+#icon-lrg {
+  font-size: 200px;
+  padding-bottom: 0px;
 }
