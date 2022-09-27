@@ -5,6 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="./assets/css/reset.css">
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-iYQeCzEYFbKjA/T2uDLTpkwGzCiq6soy8tYaI1GyVh/UjpbCx/TYkiZhlZB6+fzT" crossorigin="anonymous">
   <link rel="stylesheet" href="./assets/css/style.css">
   <title>Weather Forecast App</title>
@@ -33,24 +34,27 @@
   <button class="btn btn-outline-dark" type="submit" id="save">Save this city</button>
   <section id="day-weather">
     <h1>Today's Weather Forecast</h1>
+    <h2 id="city">Toronto</h2>
     <ul>
-      <li>Icon</li>
-      <li>Hightemp</li>
-      <li>Lowtemp</li>
-      <li>Humidity</li>
-      <li>Wind</li>
+      <li id="icon-lrg"></li>
+      <li></li>
+      <li></li>
+      <li></li>
+      <li></li>
     </ul>
 </section>
-  <section class="px-5 py-4 d-flex">
+  <section class="px-5 py-4 d-flex" id="weather-cards">
   <div class="card" style="width: 18rem;">
     <h2 id="icon-1">Icon</h2>
     <div class="card-body">
-      <h5 class="card-title">Card title</h5>
-      <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+      <h5 class="card-title" id="day-0-icon">Card title</h5>
+      <p class="card-text" id="date-0">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
     </div>
-    <ul class="list-group list-group-flush">
-      <li class="list-group-item">High Temp</li>
-      <li class="list-group-item">Low Temp</li>
+    <ul class="list-group list-group-flush" id="day-0">
+      <li class="list-group-item">Date</li>
+      <li class="list-group-item">Icon</li>
+      <li class="list-group-item">High</li>
+      <li class="list-group-item">FeelsLike</li>
       <li class="list-group-item">Humidity</li>
       <li class="list-group-item">Wind Speed</li>
     </ul>
@@ -58,12 +62,14 @@
   <div class="card" style="width: 18rem;">
     <h2 id="icon-1">Icon</h2>
     <div class="card-body">
-      <h5 class="card-title">Card title</h5>
-      <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+      <h5 class="card-title" id="day-1-icon">Card title</h5>
+      <p class="card-text" id="date-1">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
     </div>
-    <ul class="list-group list-group-flush">
-      <li class="list-group-item">High Temp</li>
-      <li class="list-group-item">Low Temp</li>
+    <ul class="list-group list-group-flush" id="day-1">
+      <li class="list-group-item">Date</li>
+      <li class="list-group-item">Icon</li>
+      <li class="list-group-item">High</li>
+      <li class="list-group-item">FeelsLike</li>
       <li class="list-group-item">Humidity</li>
       <li class="list-group-item">Wind Speed</li>
     </ul>
@@ -71,12 +77,14 @@
   <div class="card" style="width: 18rem;">
     <h2 id="icon-1">Icon</h2>
     <div class="card-body">
-      <h5 class="card-title">Card title</h5>
-      <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+      <h5 class="card-title" id="day-2-icon">Card title</h5>
+      <p class="card-text" id="date-2">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
     </div>
-    <ul class="list-group list-group-flush">
-      <li class="list-group-item">High Temp</li>
-      <li class="list-group-item">Low Temp</li>
+    <ul class="list-group list-group-flush" id="day-2">
+      <li class="list-group-item">Date</li>
+      <li class="list-group-item">Icon</li>
+      <li class="list-group-item">High</li>
+      <li class="list-group-item">FeelsLike</li>
       <li class="list-group-item">Humidity</li>
       <li class="list-group-item">Wind Speed</li>
     </ul>
@@ -84,12 +92,14 @@
   <div class="card" style="width: 18rem;">
     <h2 id="icon-1">Icon</h2>
     <div class="card-body">
-      <h5 class="card-title">Card title</h5>
-      <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+      <h5 class="card-title" id="day-3-icon">Card title</h5>
+      <p class="card-text" id="date-3">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
     </div>
-    <ul class="list-group list-group-flush">
-      <li class="list-group-item">High Temp</li>
-      <li class="list-group-item">Low Temp</li>
+    <ul class="list-group list-group-flush" id="day-3">
+      <li class="list-group-item">Date</li>
+      <li class="list-group-item">Icon</li>
+      <li class="list-group-item">High</li>
+      <li class="list-group-item">FeelsLike</li>
       <li class="list-group-item">Humidity</li>
       <li class="list-group-item">Wind Speed</li>
     </ul>
@@ -97,12 +107,14 @@
   <div class="card" style="width: 18rem;">
     <h2 id="icon-1">Icon</h2>
     <div class="card-body">
-      <h5 class="card-title">Card title</h5>
-      <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+      <h5 class="card-title" id="day-4-icon">Card title</h5>
+      <p class="card-text" id="date-4">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
     </div>
-    <ul class="list-group list-group-flush">
-      <li class="list-group-item">High Temp</li>
-      <li class="list-group-item">Low Temp</li>
+    <ul class="list-group list-group-flush" id="day-4">
+      <li class="list-group-item">Date</li>
+      <li class="list-group-item">Icon</li>
+      <li class="list-group-item">High</li>
+      <li class="list-group-item">FeelsLike</li>
       <li class="list-group-item">Humidity</li>
       <li class="list-group-item">Wind Speed</li>
     </ul>
@@ -113,6 +125,8 @@
     Made using Open Weather Map API, bootstrap, and Jquery <br>
     By Jia Liang Chen in HTML, CSS, and JavaScript
   </footer>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.24.0/moment.min.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-u1OknCvxWvY5kfmNBILK2hRnQC3Pr17a+RTT6rIHI7NnikvbZlHgTPOOmMi466C8" crossorigin="anonymous"></script>
+  <script src="./assets/js/script.js"></script>
 </body>
 </html>
