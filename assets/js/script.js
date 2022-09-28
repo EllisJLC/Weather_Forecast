@@ -11,7 +11,6 @@ let citySearch;
 let searchedCity;
 document.getElementById("date").innerHTML = moment().format("dddd, MMMM Do, YYYY");
 
-
 load_tabs();
 fill_main(cityDefault);
 
@@ -42,8 +41,7 @@ saveCity.addEventListener("click", (e) => {
     } else {
     alert ("Please search a city first!");
   }
-}
-)
+});
 
 navigate.addEventListener("click", (e) => {
   e.preventDefault();
@@ -71,7 +69,7 @@ function fill_main (city) {
     .then((response) => response.json())
     .then((data) => {
       if (data.length>=1) {
-        cityName.innerHTML = city;
+        cityName.innerHTML = city; // Set title to city name
         let lat = data[0].lat; // Obtain latitude of specified city
         let lon = data[0].lon; // Obtain longitude of specified city
         url = `http://api.openweathermap.org/data/2.5/forecast?lat=${lat}&lon=${lon}&appid=${api_key}`;
@@ -134,7 +132,7 @@ function fill_cards (location) {
 );
 }
 
-function set_direction (direction) {
+function set_direction (direction) { // Set wind direction
   if (direction === 45) {
     direction = "NE";
   } else if (direction === 135) {

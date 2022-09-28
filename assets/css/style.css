@@ -37,3 +37,8 @@ a:hover {
   padding-top: 10px;
   background-color: rgb(102, 146, 241);
 }
+
+#weather-cards {
+  display:flex;
+  justify-content: center;
+}
