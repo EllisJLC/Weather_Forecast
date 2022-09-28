@@ -65,43 +65,30 @@ function load_tabs() {
 }
 
 function fill_main (city) {
-  fetch (`http://api.openweathermap.org/geo/1.0/direct?q=${city}&limit=1&appid=${api_key}`) // Search load
+  fetch (`https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${api_key}`) // Search load
     .then((response) => response.json())
     .then((data) => {
-      if (data.length>=1) {
-        cityName.innerHTML = city; // Set title to city name
-        let lat = data[0].lat; // Obtain latitude of specified city
-        let lon = data[0].lon; // Obtain longitude of specified city
-        url = `http://api.openweathermap.org/data/2.5/forecast?lat=${lat}&lon=${lon}&appid=${api_key}`;
-        fetch (url)
-          .then ((response) => response.json())
-          .then ((data) => {
-            let currentWeather = document.getElementById("day-weather");
-            let skies = data.list[0].weather[0].main; // gets main weather type
-            let weatherIcon = weather_icon(skies);
-            currentWeather.children[3].children[0].textContent = weatherIcon;
-            currentWeather.children[3].children[1].textContent = `Currently ${Math.round(data.list[0].main.temp)-273}°C`; // Display current temperature
-            currentWeather.children[3].children[2].textContent = `Feels like ${Math.round(data.list[0].main.feels_like)-273}°C`; // Display feels like temperature
-            currentWeather.children[3].children[3].textContent = `Humidity: ${data.list[0].main.humidity}%`; // Set humidity
-            let direction = set_direction(data.list[0].wind.deg); // Get wind direction
-            currentWeather.children[3].children[4].textContent = `Wind Speed: ${data.list[0].wind.speed}km/h ${direction}`; // Set wind speed and direction
-          });
+      console.log(data)
+      if (data.cod < 299) {
+        let currentWeather = document.getElementById("day-weather");
+        let skies = data.weather[0].main; // gets main weather type
+        let weatherIcon = weather_icon(skies);
+        currentWeather.children[3].children[0].textContent = weatherIcon;
+        currentWeather.children[3].children[1].textContent = `Currently ${Math.round(data.main.temp)-273}°C`; // Display current temperature
+        currentWeather.children[3].children[2].textContent = `Feels like ${Math.round(data.main.feels_like)-273}°C`; // Display feels like temperature
+        currentWeather.children[3].children[3].textContent = `Humidity: ${data.main.humidity}%`; // Set humidity
+        let direction = set_direction(data.wind.deg); // Get wind direction
+        currentWeather.children[3].children[4].textContent = `Wind Speed: ${data.wind.speed}km/h ${direction}`; // Set wind speed and direction;
         fill_cards(city);
       } else {
-        alert("City is invalid! Try again!");
-        document.getElementById("search-text").value = "";
-    }
+      alert("City is invalid! Try again!");
+      document.getElementById("search-text").value = "";
+      }
   });
 }
 
 function fill_cards (location) {
-  fetch (`http://api.openweathermap.org/geo/1.0/direct?q=${location}&limit=1&appid=${api_key}`) // Get lat and lon of target city
-  .then((response) => response.json())
-  .then((data) => {
-    let lat = data[0].lat; // Obtain latitude of city
-    let lon = data[0].lon; // Obtain longitude of city
-    url = `http://api.openweathermap.org/data/2.5/forecast?lat=${lat}&lon=${lon}&appid=${api_key}`;
-    fetch (url)
+    fetch (`https://api.openweathermap.org/data/2.5/forecast?q=${location}&appid=${api_key}`)
     .then ((response) => response.json())
     .then ((data) => {
       for (i = 0; i<5; i++) {
@@ -129,8 +116,6 @@ function fill_cards (location) {
       }
     });
   }
-);
-}
 
 function set_direction (direction) { // Set wind direction
   if (direction === 45) {
