@@ -14,19 +14,19 @@ document.getElementById("date").innerHTML = moment().format("dddd, MMMM Do, YYYY
 load_tabs();
 fill_main(cityDefault);
 
-search.addEventListener("click", (e) => {
+search.addEventListener("click", (e) => { // Search for city
   e.preventDefault();
   citySearch = document.getElementById("search-text");
-  searchedCity = citySearch.value;
-  citySearch.value = "";
-  fill_main(searchedCity);
+  searchedCity = citySearch.value; 
+  citySearch.value = ""; // Empty search text
+  fill_main(searchedCity); // Get data on aforementioned city
 })
 
-saveCity.addEventListener("click", (e) => {
+saveCity.addEventListener("click", (e) => { // Save cities
     if (searchedCity){
       e.preventDefault();
-      city = searchedCity;
-      if (localStorage.getItem("saved-2")) {
+      city = searchedCity; 
+      if (localStorage.getItem("saved-2")) { // Overwrite oldest item saved
         localStorage.setItem("saved-2",localStorage.getItem("saved-1"));
         localStorage.setItem("saved-1",localStorage.getItem("saved-0"));
         localStorage.setItem("saved-0",city);
@@ -43,7 +43,7 @@ saveCity.addEventListener("click", (e) => {
   }
 });
 
-navigate.addEventListener("click", (e) => {
+navigate.addEventListener("click", (e) => { // Set event listner for navbar option selection
   e.preventDefault();
   if (e.target.tagName === "A"){
     let citySelect = e.target.textContent;
@@ -51,7 +51,7 @@ navigate.addEventListener("click", (e) => {
   }
 });
 
-function load_tabs() {
+function load_tabs() { // Load tabs if local storage is not empty
   let navtabs = document.querySelector(".nav-item");
   if (localStorage.getItem("saved-0")) {
     navtabs.children[1].innerHTML = localStorage.getItem("saved-0");
@@ -70,10 +70,11 @@ function fill_main (city) {
     .then((data) => {
       console.log(data)
       if (data.cod < 299) {
+        cityName.innerHTML = city;
         let currentWeather = document.getElementById("day-weather");
         let skies = data.weather[0].main; // gets main weather type
         let weatherIcon = weather_icon(skies);
-        currentWeather.children[3].children[0].textContent = weatherIcon;
+        currentWeather.children[3].children[0].textContent = weatherIcon; // Display relevant weather icon
         currentWeather.children[3].children[1].textContent = `Currently ${Math.round(data.main.temp)-273}°C`; // Display current temperature
         currentWeather.children[3].children[2].textContent = `Feels like ${Math.round(data.main.feels_like)-273}°C`; // Display feels like temperature
         currentWeather.children[3].children[3].textContent = `Humidity: ${data.main.humidity}%`; // Set humidity
