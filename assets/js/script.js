@@ -79,7 +79,7 @@ function fill_main (city) {
         currentWeather.children[3].children[2].textContent = `Feels like ${Math.round(data.main.feels_like)-273}°C`; // Display feels like temperature
         currentWeather.children[3].children[3].textContent = `Humidity: ${data.main.humidity}%`; // Set humidity
         let direction = set_direction(data.wind.deg); // Get wind direction
-        currentWeather.children[3].children[4].textContent = `Wind Speed: ${data.wind.speed}km/h ${direction}`; // Set wind speed and direction;
+        currentWeather.children[3].children[4].textContent = `Wind Speed: ${data.wind.speed}m/s ${direction}`; // Set wind speed and direction;
         fill_cards(city);
       } else {
       alert("City is invalid! Try again!");
@@ -113,7 +113,7 @@ function fill_cards (location) {
         card.children[1].textContent = `Feels like ${Math.round(data.list[index].main.feels_like)-273}°C`; // Display feels like temperature
         card.children[2].textContent = `Humidity: ${data.list[index].main.humidity}%`; // Set humidity
         let direction = set_direction(data.list[index].wind.deg); // Get wind direction
-        card.children[3].textContent = `Wind Speed: ${data.list[index].wind.speed}km/h ${direction}`; // Set wind information
+        card.children[3].textContent = `Wind Speed: ${data.list[index].wind.speed}m/s ${direction}`; // Set wind information
       }
     });
   }
