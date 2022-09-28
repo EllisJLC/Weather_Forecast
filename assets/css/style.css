@@ -24,3 +24,9 @@ footer {
   font-size: 200px;
   padding-bottom: 0px;
 }
+
+.card-icon {
+  font-size: 50px;
+  text-align: center;
+  margin-bottom: 0px;
+}
