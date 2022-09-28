@@ -32,8 +32,10 @@
     </div>
   </nav>
   <button class="btn btn-outline-dark" type="submit" id="save">Save this city</button>
+  <!-- Current day weather -->
   <section id="day-weather">
     <h1>Today's Weather Forecast</h1>
+    <h2 id="date"></h2>
     <h2 id="city">Toronto</h2>
     <ul>
       <li id="icon-lrg"></li>
@@ -43,83 +45,69 @@
       <li></li>
     </ul>
 </section>
-  <section class="px-5 py-4 d-flex" id="weather-cards">
+  <!-- 5-day forecast -->
+<section class="px-5 py-4 d-flex" id="weather-cards">
   <div class="card" style="width: 18rem;">
-    <h2 id="icon-1">Icon</h2>
+    <h2 id="icon-0" class="card-icon"></h2>
     <div class="card-body">
-      <h5 class="card-title" id="day-0-icon">Card title</h5>
-      <p class="card-text" id="date-0">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-    </div>
+      <h5 class="card-title" id="weekday-0"></h5>
+      </div>
     <ul class="list-group list-group-flush" id="day-0">
-      <li class="list-group-item">Date</li>
-      <li class="list-group-item">Icon</li>
-      <li class="list-group-item">High</li>
-      <li class="list-group-item">FeelsLike</li>
-      <li class="list-group-item">Humidity</li>
-      <li class="list-group-item">Wind Speed</li>
+      <li class="list-group-item"></li>
+      <li class="list-group-item"></li>
+      <li class="list-group-item"></li>
+      <li class="list-group-item"></li>
     </ul>
   </div>
   <div class="card" style="width: 18rem;">
-    <h2 id="icon-1">Icon</h2>
+    <h2 id="icon-1" class="card-icon"></h2>
     <div class="card-body">
-      <h5 class="card-title" id="day-1-icon">Card title</h5>
-      <p class="card-text" id="date-1">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-    </div>
+      <h5 class="card-title" id="weekday-1"></h5>
+      </div>
     <ul class="list-group list-group-flush" id="day-1">
-      <li class="list-group-item">Date</li>
-      <li class="list-group-item">Icon</li>
-      <li class="list-group-item">High</li>
-      <li class="list-group-item">FeelsLike</li>
-      <li class="list-group-item">Humidity</li>
-      <li class="list-group-item">Wind Speed</li>
+      <li class="list-group-item"></li>
+      <li class="list-group-item"></li>
+      <li class="list-group-item"></li>
+      <li class="list-group-item"></li>
     </ul>
   </div>
   <div class="card" style="width: 18rem;">
-    <h2 id="icon-1">Icon</h2>
+    <h2 id="icon-2" class="card-icon"></h2>
     <div class="card-body">
-      <h5 class="card-title" id="day-2-icon">Card title</h5>
-      <p class="card-text" id="date-2">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-    </div>
+      <h5 class="card-title" id="weekday-2"></h5>
+      </div>
     <ul class="list-group list-group-flush" id="day-2">
-      <li class="list-group-item">Date</li>
-      <li class="list-group-item">Icon</li>
-      <li class="list-group-item">High</li>
-      <li class="list-group-item">FeelsLike</li>
-      <li class="list-group-item">Humidity</li>
-      <li class="list-group-item">Wind Speed</li>
+      <li class="list-group-item"></li>
+      <li class="list-group-item"></li>
+      <li class="list-group-item"></li>
+      <li class="list-group-item"></li>
     </ul>
   </div>
   <div class="card" style="width: 18rem;">
-    <h2 id="icon-1">Icon</h2>
+    <h2 id="icon-3" class="card-icon"></h2>
     <div class="card-body">
-      <h5 class="card-title" id="day-3-icon">Card title</h5>
-      <p class="card-text" id="date-3">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+      <h5 class="card-title" id="weekday-3"></h5>
     </div>
     <ul class="list-group list-group-flush" id="day-3">
-      <li class="list-group-item">Date</li>
-      <li class="list-group-item">Icon</li>
-      <li class="list-group-item">High</li>
-      <li class="list-group-item">FeelsLike</li>
-      <li class="list-group-item">Humidity</li>
-      <li class="list-group-item">Wind Speed</li>
+      <li class="list-group-item"></li>
+      <li class="list-group-item"></li>
+      <li class="list-group-item"></li>
+      <li class="list-group-item"></li>
     </ul>
   </div>
   <div class="card" style="width: 18rem;">
-    <h2 id="icon-1">Icon</h2>
+    <h2 id="icon-4" class="card-icon"></h2>
     <div class="card-body">
-      <h5 class="card-title" id="day-4-icon">Card title</h5>
-      <p class="card-text" id="date-4">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-    </div>
+      <h5 class="card-title" id="weekday-4"></h5>
+      </div>
     <ul class="list-group list-group-flush" id="day-4">
-      <li class="list-group-item">Date</li>
-      <li class="list-group-item">Icon</li>
-      <li class="list-group-item">High</li>
-      <li class="list-group-item">FeelsLike</li>
-      <li class="list-group-item">Humidity</li>
-      <li class="list-group-item">Wind Speed</li>
+      <li class="list-group-item"></li>
+      <li class="list-group-item"></li>
+      <li class="list-group-item"></li>
+      <li class="list-group-item"></li>
     </ul>
   </div>
-  </section>
+</section>
 
   <footer class="bg-primary"> 
     Made using Open Weather Map API, bootstrap, and Jquery <br>
