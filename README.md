@@ -32,11 +32,11 @@ The webpage was launched using Github Pages at https://ellisjlc.github.io/Weathe
 2. Search city (Default city is Toronto) to view their weather data. (Do not enter an invalid city)
 3. Select the "Save this city" button to save the current city (up to 3) into the navigation bar.
 
-## API's
-The following API's were used in this project.
-- Open Weather Map
-- Moment.js
-- Bootstrap
+## API's and Libraries
+The following API's and libraries were used in this project.
+- Open Weather API 
+- Moment.js (Library)
+- Bootstrap (Library)
 
 ## Credits
 All images provided within the webpage and in the README.md were created personally by Jia Liang (Ellison) Chen.
